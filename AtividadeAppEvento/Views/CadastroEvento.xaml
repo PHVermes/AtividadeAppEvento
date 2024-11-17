@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AtividadeAppEvento.Views.CadastroEvento"
+             Title="CadastroEvento"
+             NavigationPage.HasNavigationBar="False"
+             Background="Snow">
+    <VerticalStackLayout>
+        <Label Text="Cadastro de Eventos"
+               FontFamily="Lobster"
+               FontSize="45"
+               TextColor="Purple"
+               Padding="10"/>
+        <Frame BackgroundColor="DarkMagenta"
+               Opacity="1">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto, Auto"
+                      ColumnDefinitions="*, 2*">
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Nome do Evento:"
+                           TextColor="White"
+                           FontSize="17"
+                           FontFamily="Lobster"/>
+                    <Entry Grid.Row="0" Grid.Column="1"
+                           x:Name="str_nome"
+                           Text="{Binding Name}"
+                           BackgroundColor="White"
+                           TextColor="Black"/>
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Local do Evento:"
+                           TextColor="White"
+                           FontSize="17"
+                           FontFamily="Lobster"/>
+                    <Entry Grid.Row="1" Grid.Column="1"
+                           x:Name="str_local"
+                           Text="{Binding Local}"
+                           BackgroundColor="White"
+                           TextColor="Black"/>
+                    <Label Grid.Row="2" Grid.Column="0"
+                           Text="Custo do Evento:"
+                           TextColor="White"
+                           FontSize="17"
+                           FontFamily="Lobster"/>
+                    <Entry Grid.Row="2" Grid.Column="1"
+                           x:Name="dou_custo"
+                           Text="{Binding Value}"
+                           BackgroundColor="White"
+                           TextColor="Black"/>
+                </Grid>
+                <Frame Padding="10"
+                       Margin="10"
+                       BackgroundColor="Purple">
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Período do Evento"
+                               FontFamily="Lobster"
+                               FontSize="30"/>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Período de Início:"
+                                   Margin="6"/>
+                            <DatePicker x:Name="dtpck_inicio"
+                                        DateSelected="dtpck_inicio_DateSelected"
+                                        Format="dd/MM/yyyy"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Período de Término:"
+                                   Margin="6"/>
+                            <DatePicker x:Name="dtpck_final"
+                                        Format="dd/MM/yyyy"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </Frame>
+        <Button Text="Avançar" BackgroundColor="Purple" TextColor="White" Clicked="Button_Clicked" Padding="10" Margin="10"/>
+    </VerticalStackLayout>
+</ContentPage>

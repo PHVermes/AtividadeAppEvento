@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AtividadeAppEvento.Views.EventoCadastrado"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Snow">
+    <VerticalStackLayout>
+        <Label Text="Evento Cadastrado"
+               FontFamily="Lobster"
+               FontSize="50"
+               TextColor="DarkMagenta"
+               HorizontalTextAlignment="Center"
+               Padding="7"/>
+        <Frame Margin="10" BackgroundColor="DarkMagenta">
+            <StackLayout Orientation="Horizontal">
+                <VerticalStackLayout VerticalOptions="CenterAndExpand" Spacing="5">
+                    <Label Text="Nome: "
+                           TextColor="Snow"
+                           FontFamily="Lobster"
+                           FontSize="20"/>
+                    <Label Text="{Binding Nome}"
+                           TextColor="Snow"
+                           FontFamily="Lobster"
+                           FontSize="20"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout VerticalOptions="CenterAndExpand" Spacing="5">
+                    <Label Text="Local: "
+                           TextColor="Snow"
+                           FontFamily="Lobster"
+                           FontSize="20"/>
+                    <Label Text="{Binding Local}"
+                           TextColor="Snow"
+                           FontFamily="Lobster"
+                           FontSize="20"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout VerticalOptions="CenterAndExpand" Spacing="5">
+                    <Label Text="Custo por Participante: "
+                           TextColor="Snow"
+                           FontFamily="Lobster"
+                           FontSize="20"/>
+                    <Label Text="{Binding Value}"
+                           TextColor="Snow"
+                           FontFamily="Lobster"
+                           FontSize="20"/>
+                </VerticalStackLayout>
+            </StackLayout>
+        </Frame>
+        <Frame Margin="10" BackgroundColor="Black">
+            <Grid ColumnDefinitions="*, *, *"
+                  RowDefinitions="Auto, Auto">
+                <Label Grid.Row="0" Grid.Column="0" Text="Início:" FontFamily="Lobster-Regular" FontSize="20"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Final:" FontFamily="Lobster-Regular" FontSize="20"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Duração:" FontFamily="Lobster-Regular" FontSize="20"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="Lobster-Regular" FontSize="20"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataFim, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="Lobster-Regular" FontSize="20"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Duracao }" FontFamily="Lobster-Regular" FontSize="20"/>
+            </Grid>
+        </Frame>
+        <Button Text="Voltar"
+                Clicked="Button_Clicked"
+                HorizontalOptions="Center"
+                BackgroundColor="DarkMagenta"
+                TextColor="White"/>
+    </VerticalStackLayout>
+</ContentPage>
